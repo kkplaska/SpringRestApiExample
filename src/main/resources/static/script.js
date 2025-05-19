@@ -1,5 +1,5 @@
 // API Base URL
-const API_URL = 'http://localhost:45455/data';
+const API_URL = location.protocol + '//' + location.host + location.pathname + 'data';
 
 // Patient Management
 function showPatientForm() {

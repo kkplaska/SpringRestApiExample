@@ -1,0 +1,52 @@
+=== Konrad Płaska
+
+--- Table Patients
+# Wyświetl wszystkich pacjentów
+GET: http://localhost:45455/data/patients
+Body: none
+
+# Wstaw nowego pacjenta
+POST: http://localhost:45455/data/patients
+Body:
+{
+    "firstName": "Ryszard",
+    "lastName": "Zlasu",
+    "email": "ryszard@dziku.com",
+    "contactNumber": "213112505"
+}
+
+--- Table Doctors
+# Wyświetl wszystkich lekarzy
+GET: http://localhost:45455/data/doctors
+Body: none
+
+# Wstaw nowego lekarza
+POST: http://localhost:45455/data/doctors
+Body:
+{
+    "doctorName": "Jan Lekarski",
+    "specialization": "Psychiatrist"
+}
+
+--- Table Visits
+# Wyświetl wszystkie wizyty
+GET: http://localhost:45455/data/visits
+Body: none
+
+# Wstaw nową wizytę
+POST:
+Body:
+{
+    "patientId": 1,
+    "doctorId": 1,
+    "scheduledTime": "2025-05-20T15:00:00"
+}
+
+# Zmień status wizyty
+PUT: http://localhost:45455/data/visits/2/status?status=COMPLETED
+Body: none
+
+# Usuń wizytę
+DELETE: http://localhost:45455/data/visits/1
+Body: none
+
