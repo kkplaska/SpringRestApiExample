@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Visit Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src = "script.js"></script>
+</head>
+<body>
+<h1>Medical Clinic Manager</h1>
+<hr>
+<nav>
+    <ul>
+        <li><a href="#patients">Patients</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#visits">Visits</a></li>
+    </ul>
+</nav>
+<hr>
+<div id="containers">
+    <div id="patients">
+        <h2>Patients</h2>
+        <button onclick="showPatientForm()">Add Patient</button>
+        <div id="patientForm" style="display: none;">
+            <form id="patientFormSubmit" onsubmit="handlePatientFormSubmit(event)">
+                <input type="text" id="firstName" placeholder="First Name">
+                <input type="text" id="lastName" placeholder="Last Name">
+                <input type="email" id="email" placeholder="Email">
+                <input type="text" id="contactNumber" placeholder="Contact Number">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        <div id="patientsList"></div>
+    </div>
+    <hr class="separator">
+    <div id="doctors">
+        <h2>Doctors</h2>
+        <button onclick="showDoctorForm()">Add Doctor</button>
+        <div id="doctorForm" style="display: none;">
+            <form id="doctorFormSubmit" onsubmit="handleDoctorFormSubmit(event)">
+                <input type="text" id="doctorName" placeholder="Doctor Name">
+                <input type="text" id="specialization" placeholder="Specialization">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        <div id="doctorsList"></div>
+    </div>
+    <hr class="separator">
+    <div id="visits">
+        <h2>Visits</h2>
+        <button onclick="showVisitForm()">Add Visit</button>
+        <div id="visitForm" style="display: none;">
+            <form id="visitFormSubmit" onsubmit="handleVisitFormSubmit(event)">
+                <select id="patientId" required>
+                    <option value="">Select Patient</option>
+                </select>
+                <select id="doctorId" required>
+                    <option value="">Select Doctor</option>
+                </select>
+                <input type="datetime-local" id="scheduledTime" required>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        <div id="visitsList"></div>
+    </div>
+</div>
+</body>
+</html>
