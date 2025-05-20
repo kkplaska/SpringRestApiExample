@@ -1,7 +1,7 @@
 package pl.pjatk.tpo6_pk_s30213.Services;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import pl.pjatk.tpo6_pk_s30213.Models.Doctor;
 import pl.pjatk.tpo6_pk_s30213.Models.Patient;
 import pl.pjatk.tpo6_pk_s30213.Repositories.PatientRepository;
 
@@ -20,7 +20,7 @@ public class PatientsService {
     }
 
     public List<Patient> getAllPatients() {
-        return _patientRepository.findAll().stream().sorted((a,b) -> Math.toIntExact(a.getPatientId() - b.getPatientId())).toList();
+        return _patientRepository.findAll(Sort.by(Sort.Direction.ASC, "patientId").and(Sort.by(Sort.Direction.ASC, "lastName")));
     }
 
     public Patient addPatient(Patient patient) {

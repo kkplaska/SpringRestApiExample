@@ -65,7 +65,6 @@ async function addPatient() {
     });
 
     if (response.ok) {
-        await loadPatients();
         document.getElementById('patientForm').style.display = 'none';
         document.getElementById('patientFormSubmit').reset();
     }
@@ -141,7 +140,6 @@ async function addDoctor() {
     });
 
     if (response.ok) {
-        await loadDoctors();
         document.getElementById('doctorForm').style.display = 'none';
         document.getElementById('doctorFormSubmit').reset();
     }
@@ -233,7 +231,6 @@ async function addVisit() {
     });
 
     if (response.ok) {
-        await loadVisits();
         document.getElementById('visitForm').style.display = 'none';
         document.getElementById('visitFormSubmit').reset();
     } else {

@@ -1,5 +1,6 @@
 package pl.pjatk.tpo6_pk_s30213.Services;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import pl.pjatk.tpo6_pk_s30213.Models.Visit;
 import pl.pjatk.tpo6_pk_s30213.Repositories.VisitRepository;
@@ -14,8 +15,12 @@ public class VisitsService {
         this._visitRepository = _visitRepository;
     }
 
+    public List<Visit> getAllVisitsSortedBy(String column){
+        return _visitRepository.findAll(Sort.by(Sort.Direction.ASC, column));
+    }
+
     public List<Visit> getAllVisits() {
-        return _visitRepository.findAll().stream().sorted((a,b) -> Math.toIntExact(a.getVisitId() - b.getVisitId())).toList();
+        return _visitRepository.findAll(Sort.by(Sort.Direction.ASC, "visitId"));
     }
 
     public Visit addVisit(Visit visit) {

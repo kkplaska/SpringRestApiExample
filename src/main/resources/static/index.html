@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Medical Visit Management</title>
     <link rel="stylesheet" href="styles.css">
-    <script src = "script.js"></script>
 </head>
 <body>
 <h1>Medical Clinic Manager</h1>
@@ -23,7 +23,7 @@
         <h2>Patients</h2>
         <button onclick="showPatientForm()">Add Patient</button>
         <div id="patientForm" style="display: none;">
-            <form id="patientFormSubmit" onsubmit="handlePatientFormSubmit(event)">
+            <form id="patientFormSubmit">
                 <input type="text" id="firstName" placeholder="First Name">
                 <input type="text" id="lastName" placeholder="Last Name">
                 <input type="email" id="email" placeholder="Email">
@@ -38,7 +38,7 @@
         <h2>Doctors</h2>
         <button onclick="showDoctorForm()">Add Doctor</button>
         <div id="doctorForm" style="display: none;">
-            <form id="doctorFormSubmit" onsubmit="handleDoctorFormSubmit(event)">
+            <form id="doctorFormSubmit">
                 <input type="text" id="doctorName" placeholder="Doctor Name">
                 <input type="text" id="specialization" placeholder="Specialization">
                 <button type="submit">Save</button>
@@ -51,7 +51,7 @@
         <h2>Visits</h2>
         <button onclick="showVisitForm()">Add Visit</button>
         <div id="visitForm" style="display: none;">
-            <form id="visitFormSubmit" onsubmit="handleVisitFormSubmit(event)">
+            <form id="visitFormSubmit">
                 <select id="patientId" required>
                     <option value="">Select Patient</option>
                 </select>
@@ -65,5 +65,6 @@
         <div id="visitsList"></div>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
